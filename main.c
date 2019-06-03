@@ -325,29 +325,5 @@ int main(int argc, char const *argv[])
 		printOptions();
 		printBoard();
 	}
-
-	/*const uint xdefault = 4, ydefault = 0;
-	uint x = xdefault, y = ydefault;
-	uint pieceIndex;
-	if(argc > 1)
-		pieceIndex = strToInt(argv[1]);
-	else
-		pieceIndex = rand() % 7;
-	piece p = pieces[pieceIndex];
-	uint randRotate = rand()%4;
-	for(uint i = 0; i <= randRotate; i++;){
-		rotateR(p);
-	}
-	for(uint i = 0; i < 5; i++){
-		x = xdefault, y = ydefault;
-		do{
-			resetTime();
-			while(elapsedTime() < 1000){
-				events();
-			}
-
-		}while(fall(x, y, p));
-		pieceIndex = (pieceIndex+1)%7;
-	}*/
 	return 0;
 }
