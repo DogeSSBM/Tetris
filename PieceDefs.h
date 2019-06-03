@@ -1,0 +1,36 @@
+#pragma once
+#define PIECE0 0b\
+0100\
+1110\
+0000\
+0000u
+#define PIECE1 0b\
+1100\
+1100\
+0000\
+0000u
+#define PIECE2 0b\
+1000\
+1000\
+1000\
+1000u
+#define PIECE3 0b\
+0100\
+0100\
+1100\
+0000u
+#define PIECE4 0b\
+1000\
+1000\
+1100\
+0000u
+#define PIECE5 0b\
+1100\
+0110\
+0000\
+0000u
+#define PIECE6 0b\
+0110\
+1100\
+0000\
+0000u
