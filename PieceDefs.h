@@ -1,4 +1,5 @@
 #pragma once
+
 #define PIECE0 0b\
 0100\
 1110\
@@ -34,3 +35,6 @@
 1100\
 0000\
 0000u
+
+const uint NUMPIECES = 7u;
+const piece pieces[] = {PIECE0, PIECE1, PIECE2, PIECE3, PIECE4, PIECE5, PIECE6};

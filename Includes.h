@@ -16,3 +16,5 @@
 #include "Timing.h"
 #include "Events.h"
 #include "PieceDefs.h"
+#include "Board.h"
+#include "Pieces.h"
