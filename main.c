@@ -1,4 +1,8 @@
 #include "Includes.h"
+#define SCALE 32
+#define GAP 2
+
+
 
 void printOptions()
 {
@@ -20,6 +24,122 @@ void printOptions()
 	}
 }
 
+void drawBlock(uint x, uint y)
+{
+	fillRect(SCALE*x+GAP, SCALE*y+GAP, SCALE-GAP*2, SCALE-GAP*2);
+}
+
+void drawWalls()
+{
+	setColor(GREY);
+	for(uint i = 0; i < 21; i++){
+		drawBlock(0, i);
+		drawBlock(11, i);
+	}
+	for(uint i = 0; i < 12; i++){
+		drawBlock(i, 20);
+	}
+}
+
+void drawPiece(uint xpos, uint ypos, piece p)
+{
+	setColor(GREY);
+	for(uint y = 0; y < 4; y++){
+		for(uint x = 0; x < 4; x++){
+			if(getBlock(x,y,p))
+				drawBlock(xpos+x, ypos+y);
+		}
+	}
+
+}
+
+void drawBoard()
+{
+	for(uint y = 0; y < 20; y++){
+		for(uint x = 0; x < 10; x++){
+			if(board[x][y]){
+				setColor(GREY);
+				drawBlock(x+1, y);
+			}
+			else{
+				setColor(BLACK);
+				drawBlock(x+1, y);
+			}
+		}
+	}
+}
+
+int main(int argc, char const *argv[])
+{
+	static event e = MOVE_D;
+	gfx_init(SCALE*12, SCALE*21);
+	drawWalls();
+	draw();
+	const uint xorig = 3, yorig = 0;
+	uint x = xorig, y = yorig;
+	piece p = pieces[rand()%7];
+	drawPiece(x+1,y,p);
+	while(1){
+		e = events();
+		switch (e){
+		case MOVE_U:
+			printf("Move U\n");
+			if(y>0 && fits(x,y-1,p)){
+				y--;
+			}
+			break;
+		case MOVE_D:
+			printf("Move D\n");
+			if(fits(x,y+1,p)){
+				y++;
+			}
+			break;
+		case MOVE_L:
+			printf("Move L\n");
+			if(x>0 && fits(x-1,y,p)){
+				x--;
+			}
+			break;
+		case MOVE_R:
+			printf("Move R\n");
+			if(fits(x+1,y,p)){
+				x++;
+			}
+			break;
+		case ROTATE_L:
+			printf("Rotate L\n");
+			if(fits(x,y,rotateL(p))){
+				p = rotateL(p);
+			}
+			break;
+		case ROTATE_R:
+			printf("Rotate R\n");
+			if(fits(x,y,rotateR(p))){
+				p = rotateR(p);
+			}
+			break;
+		case PLACE:
+			printf("Place\n");
+			placePiece(x,y,p);
+			x = xorig, y = yorig;
+			p = pieces[rand()%7];
+			break;
+		case NOTHING:
+			break;
+		default:
+			printf("Unknown event\n");
+			break;
+		}
+		drawWalls();
+		drawBoard();
+		drawPiece(x+1,y,p);
+		draw();
+		delay(5);
+	}
+	return 0;
+}
+
+/*
 int main(int argc, char const *argv[])
 {
 	const uint xorig = 3, yorig = 0;
@@ -125,3 +245,4 @@ int main(int argc, char const *argv[])
 	}
 	return 0;
 }
+*/
