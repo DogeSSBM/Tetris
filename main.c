@@ -2,8 +2,6 @@
 #define SCALE 32
 #define GAP 2
 
-
-
 void printOptions()
 {
 	printf("Options:\n");
@@ -31,7 +29,7 @@ void drawBlock(uint x, uint y)
 
 void drawWalls()
 {
-	setColor(GREY);
+	setColor(WHITE);
 	for(uint i = 0; i < 21; i++){
 		drawBlock(0, i);
 		drawBlock(11, i);
@@ -77,7 +75,7 @@ int main(int argc, char const *argv[])
 	draw();
 	const uint xorig = 3, yorig = 0;
 	uint x = xorig, y = yorig;
-	piece p = pieces[rand()%7];
+	piece p = pieces[rand()%NUMPIECES];
 	drawPiece(x+1,y,p);
 	while(1){
 		e = events();
@@ -122,7 +120,8 @@ int main(int argc, char const *argv[])
 			printf("Place\n");
 			placePiece(x,y,p);
 			x = xorig, y = yorig;
-			p = pieces[rand()%7];
+			p = pieces[rand()%NUMPIECES];
+			while(checkLines());
 			break;
 		case NOTHING:
 			break;

@@ -8,7 +8,7 @@ bool getBlock(const uint x, const uint y, const piece p)
 }
 
 // gets an x and y block within a 4x4 piece with 0,0 being the top left and 3,3 bottom right
-void setBlock(const uint x, const uint y, piece *p, const bool isFilled)
+void setBlock(const uint x, const uint y, piece *const p, const bool isFilled)
 {
 	uint16_t bit = (0b1 << 15) >> (x+(4*y));
 	if(isFilled)
