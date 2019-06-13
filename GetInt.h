@@ -35,17 +35,17 @@ int strToInt(const char *str)
 	return total;
 }
 
-int shiftR(int num)
+int shiftR(const int num)
 {
 	return num / 10;
 }
 
-int getR(int num)
+int getR(const int num)
 {
 	return num % 10;
 }
 
-char intToChar(int num)
+char intToChar(const int num)
 {
 	if(num > 9 || num < 0)
 		return '0';
@@ -55,10 +55,8 @@ char intToChar(int num)
 
 void intToStr(int num, char* str)
 {
-	char current;
 	for(int i = strlen(str); i > 0 && num > 0; i--){
-		current = intToChar(getR(num));
-		str[i-1] = current;
+		str[i-1] = intToChar(getR(num));
 		num = shiftR(num);
 	}
 }
