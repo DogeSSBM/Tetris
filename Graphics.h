@@ -133,8 +133,8 @@ TextBox* TB_create(uint x, uint y, const char* text)
 	tb->r.x = x;
 	tb->r.y = y;
 	tb->backColor = BLACK;
-	tb->textColor = PINK;
-	tb->size = 16;
+	tb->textColor = GREY;
+	tb->size = 48;
 	return tb;
 }
 
@@ -160,7 +160,7 @@ void TB_draw(TextBox *tb)
 	SDL_RenderFillRect(gfx.renderer, &(tb->r));
 	SDL_RenderCopy(gfx.renderer, texture, NULL, &(tb->r));
 	setColor(tb->textColor);
-	SDL_RenderDrawRect(gfx.renderer, &(tb->r));
+	// SDL_RenderDrawRect(gfx.renderer, &(tb->r));
 	SDL_FreeSurface(surface);
 	SDL_DestroyTexture(texture);
 }

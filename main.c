@@ -1,6 +1,6 @@
-#include "Includes.h"
 #define SCALE 32
 #define GAP 2
+#include "Includes.h"
 
 void printOptions()
 {
@@ -61,10 +61,10 @@ void drawPiece(uint xpos, uint ypos, piece p)
 				drawBlock(xpos+x, ypos+y);
 		}
 	}
-
 }
 
-void drawNext(piece n){
+void drawNext(piece n)
+{
 	for(uint y = 0; y < 4; y++){
 		for(uint x = 0; x < 4; x++){
 			if(getBlock(x,y,n))
@@ -96,7 +96,9 @@ int main(int argc, char const *argv[])
 {
 	static event e = MOVE_D;
 	gfx_init(SCALE*(12+6), SCALE*21);
+	initScore();
 	drawWalls();
+	drawScore();
 	draw();
 	const uint xorig = 3, yorig = 0;
 	uint x = xorig, y = yorig;
@@ -160,6 +162,7 @@ int main(int argc, char const *argv[])
 		drawBoard();
 		drawPiece(x+1, y, p);
 		drawNext(n);
+		drawScore();
 		draw();
 		delay(5);
 	}

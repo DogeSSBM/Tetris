@@ -18,3 +18,4 @@
 #include "PieceDefs.h"
 #include "Board.h"
 #include "Pieces.h"
+#include "Score.h"
