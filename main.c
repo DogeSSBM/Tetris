@@ -31,11 +31,24 @@ void drawWalls()
 {
 	setColor(WHITE);
 	for(uint i = 0; i < 21; i++){
+		// board walls
 		drawBlock(0, i);
 		drawBlock(11, i);
+		// rightmost wall
+		drawBlock(17, i);
 	}
-	for(uint i = 0; i < 12; i++){
+
+	for(uint i = 0; i < 12+6; i++){
+		// floor
 		drawBlock(i, 20);
+	}
+
+	for(uint i = 12; i < 12+5; i++){
+		// next piece box
+		drawBlock(i, 0);
+		drawBlock(i, 7);
+		// score bottom
+		drawBlock(i, 12);
 	}
 }
 
@@ -49,6 +62,18 @@ void drawPiece(uint xpos, uint ypos, piece p)
 		}
 	}
 
+}
+
+void drawNext(piece n){
+	for(uint y = 0; y < 4; y++){
+		for(uint x = 0; x < 4; x++){
+			if(getBlock(x,y,n))
+				setColor(GREY);
+			else
+				setColor(BLACK);
+			drawBlock(13+x, 2+y);
+		}
+	}
 }
 
 void drawBoard()
@@ -70,12 +95,13 @@ void drawBoard()
 int main(int argc, char const *argv[])
 {
 	static event e = MOVE_D;
-	gfx_init(SCALE*12, SCALE*21);
+	gfx_init(SCALE*(12+6), SCALE*21);
 	drawWalls();
 	draw();
 	const uint xorig = 3, yorig = 0;
 	uint x = xorig, y = yorig;
 	piece p = pieces[rand()%NUMPIECES];
+	piece n = pieces[rand()%NUMPIECES];
 	drawPiece(x+1,y,p);
 	while(1){
 		e = events();
@@ -120,7 +146,8 @@ int main(int argc, char const *argv[])
 			printf("Place\n");
 			placePiece(x,y,p);
 			x = xorig, y = yorig;
-			p = pieces[rand()%NUMPIECES];
+			p = n;
+			n = pieces[rand()%NUMPIECES];
 			while(checkLines());
 			break;
 		case NOTHING:
@@ -131,7 +158,8 @@ int main(int argc, char const *argv[])
 		}
 		drawWalls();
 		drawBoard();
-		drawPiece(x+1,y,p);
+		drawPiece(x+1, y, p);
+		drawNext(n);
 		draw();
 		delay(5);
 	}
