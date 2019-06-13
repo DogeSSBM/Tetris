@@ -53,19 +53,14 @@ char intToChar(int num)
 		return (char)(num + '0');
 }
 
-void intToStr(char* str, int num)
+void intToStr(int num, char* str)
 {
-	int right;
 	char current;
 	for(int i = strlen(str); i > 0 && num > 0; i--){
-		printf("getR(num) = %d\n", getR(num));
-		right = getR(num);
-		printf("intToChar(right) = %c\n", intToChar(right));
-		current = intToChar(right);
+		current = intToChar(getR(num));
 		str[i-1] = current;
 		num = shiftR(num);
 	}
-	printf("%s\n", str);
 }
 
 int getInt(void)

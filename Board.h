@@ -45,13 +45,12 @@ void removeLine(uint starty)
 
 bool checkLines()
 {
-	bool ret = false;
 	for(uint y = 0; y < 20; y++){
 		if(lineFull(19-y)){
-			ret = true;
 			printf("line %u full, removing\n", 19-y);
 			removeLine(19-y);
+			return true;
 		}
 	}
-	return ret;
+	return false;
 }

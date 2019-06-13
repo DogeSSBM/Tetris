@@ -105,6 +105,7 @@ int main(int argc, char const *argv[])
 	piece p = pieces[rand()%NUMPIECES];
 	piece n = pieces[rand()%NUMPIECES];
 	drawPiece(x+1,y,p);
+	uint linesCleared = 0;
 	while(1){
 		e = events();
 		switch (e){
@@ -150,7 +151,16 @@ int main(int argc, char const *argv[])
 			x = xorig, y = yorig;
 			p = n;
 			n = pieces[rand()%NUMPIECES];
-			while(checkLines());
+			linesCleared = 0;
+			while(checkLines()){
+				linesCleared++;
+			}
+			if(linesCleared > 0){
+				printf("%u lines cleared\n", linesCleared);
+				rawScore += linesCleared;
+				intToStr(rawScore, scoreText);
+				TB_setText(scoreNum, scoreText);
+			}
 			break;
 		case NOTHING:
 			break;
