@@ -128,12 +128,12 @@ int main(int argc, char const *argv[])
 			e = events();
 		}
 		switch (e){
-		/*case MOVE_U:
+		case MOVE_U:
 			printf("Move U\n");
 			if(y>0 && fits(x,y-1,p)){
 				y--;
 			}
-			break;*/
+			break;
 		case MOVE_L:
 			printf("Move L\n");
 			if(x>0 && fits(x-1,y,p)){
