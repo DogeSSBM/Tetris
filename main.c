@@ -92,6 +92,15 @@ void drawBoard()
 	}
 }
 
+void loose()
+{
+	printf("Next piece doesnt fit, you loose!\n");
+	while(1){
+		events();
+		delay(5);
+	}
+}
+
 int main(int argc, char const *argv[])
 {
 	static event e = MOVE_D;
@@ -106,21 +115,25 @@ int main(int argc, char const *argv[])
 	piece n = pieces[rand()%NUMPIECES];
 	drawPiece(x+1,y,p);
 	uint linesCleared = 0;
+	static uint level = 0;
+	static uint levelLinesCleared = 0;
+	static ull levelTime = 100;
+	resetTime();
 	while(1){
-		e = events();
+		if(elapsedTime() >= levelTime){
+			printf("Move D\n");
+			e = MOVE_D;
+		}
+		else{
+			e = events();
+		}
 		switch (e){
-		case MOVE_U:
+		/*case MOVE_U:
 			printf("Move U\n");
 			if(y>0 && fits(x,y-1,p)){
 				y--;
 			}
-			break;
-		case MOVE_D:
-			printf("Move D\n");
-			if(fits(x,y+1,p)){
-				y++;
-			}
-			break;
+			break;*/
 		case MOVE_L:
 			printf("Move L\n");
 			if(x>0 && fits(x-1,y,p)){
@@ -145,6 +158,13 @@ int main(int argc, char const *argv[])
 				p = rotateR(p);
 			}
 			break;
+		case MOVE_D:
+			printf("Move D\n");
+			resetTime();
+			if(fits(x,y+1,p)){
+				y++;
+				break;
+			}
 		case PLACE:
 			printf("Place\n");
 			placePiece(x,y,p);
@@ -160,6 +180,10 @@ int main(int argc, char const *argv[])
 				rawScore += linesCleared;
 				intToStr(rawScore, scoreText);
 				TB_setText(scoreNum, scoreText);
+				levelLinesCleared += linesCleared;
+			}
+			if(!fits(x,y,p)){
+				loose();
 			}
 			break;
 		case NOTHING:
@@ -167,6 +191,13 @@ int main(int argc, char const *argv[])
 		default:
 			printf("Unknown event\n");
 			break;
+		}
+		if(levelLinesCleared >= 5){
+			level++;
+			printf("5+ lines cleared, advancing to level %u\n", level);
+			levelTime = levelTime > 10? levelTime - 10 : 5;
+			printf("level time %llu\n", levelTime);
+			levelLinesCleared = 0;
 		}
 		drawWalls();
 		drawBoard();

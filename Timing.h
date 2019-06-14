@@ -9,7 +9,7 @@ void resetTime()
 	refTime = clock();
 }
 
-unsigned long long elapsedTime()
+ull elapsedTime()
 {
 	return (unsigned long long)((clock() - refTime)/ClockPerMs);
 }

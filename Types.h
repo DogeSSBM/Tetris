@@ -2,6 +2,7 @@
 
 typedef unsigned int uint;
 typedef unsigned long ul;
+typedef unsigned long long ull;
 
 typedef uint8_t u8;
 typedef uint16_t u16;
