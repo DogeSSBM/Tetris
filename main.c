@@ -117,16 +117,13 @@ int main(int argc, char const *argv[])
 	uint linesCleared = 0;
 	static uint level = 0;
 	static uint levelLinesCleared = 0;
-	static ull levelTime = 100;
+	static ull levelTime = 1000ull;
 	resetTime();
 	while(1){
-		if(elapsedTime() >= levelTime){
-			printf("Move D\n");
+		if(elapsedTime() >= levelTime)
 			e = MOVE_D;
-		}
-		else{
+		else
 			e = events();
-		}
 		switch (e){
 		case MOVE_U:
 			printf("Move U\n");
@@ -195,7 +192,7 @@ int main(int argc, char const *argv[])
 		if(levelLinesCleared >= 5){
 			level++;
 			printf("5+ lines cleared, advancing to level %u\n", level);
-			levelTime = levelTime > 10? levelTime - 10 : 5;
+			levelTime = levelTime > 100? levelTime - 100 : 50;
 			printf("level time %llu\n", levelTime);
 			levelLinesCleared = 0;
 		}
@@ -205,7 +202,6 @@ int main(int argc, char const *argv[])
 		drawNext(n);
 		drawScore();
 		draw();
-		delay(5);
 	}
 	return 0;
 }

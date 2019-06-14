@@ -11,5 +11,5 @@ void resetTime()
 
 ull elapsedTime()
 {
-	return (unsigned long long)((clock() - refTime)/ClockPerMs);
+	return (ull)((clock() - refTime)/ClockPerMs);
 }
