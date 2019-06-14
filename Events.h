@@ -29,9 +29,9 @@ event events()
 			case SDLK_s:
 				return MOVE_D;
 				break;
-			case SDLK_w:
+			/*case SDLK_w:
 				return MOVE_U;
-				break;
+				break;*/
 			case SDLK_a:
 				return MOVE_L;
 				break;
@@ -44,9 +44,9 @@ event events()
 			case SDLK_e:
 				return ROTATE_R;
 				break;
-			case SDLK_SPACE:
+			/*case SDLK_SPACE:
 				return PLACE;
-				break;
+				break;*/
 			default:
 				return NOTHING;
 				break;
