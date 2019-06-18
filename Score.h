@@ -17,9 +17,3 @@ void initScore()
 	scoreNum = TB_create(SCALE*12+SCALE/4, SCALE*10+SCALE/4, "00000");
 	setScore(0);
 }
-
-void drawScore()
-{
-	TB_draw(scoreLabel);
-	TB_draw(scoreNum);
-}

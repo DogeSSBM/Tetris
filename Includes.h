@@ -19,3 +19,4 @@
 #include "Board.h"
 #include "Pieces.h"
 #include "Score.h"
+#include "Draw.h"
