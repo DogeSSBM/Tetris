@@ -78,6 +78,7 @@ void drawScore()
 
 void drawAll(uint pieceX, uint pieceY, piece p, piece n)
 {
+    clear();
 	drawWalls();
 	drawBoard();
 	drawPiece(pieceX + 1, pieceY, p);

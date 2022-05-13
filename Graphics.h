@@ -72,7 +72,7 @@ void setRGBA(u8 r, u8 g, u8 b, u8 a)
 
 void clear()
 {
-	setColor(gfx.defaultColor);
+	setColor(BLACK);
 	SDL_RenderClear(gfx.renderer);
 	fillRect(0,0,gfx.xlen,gfx.ylen);
 }
