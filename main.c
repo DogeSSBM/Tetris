@@ -24,6 +24,7 @@ int main(int argc, char const *argv[])
 	static uint level = 0;
 	static uint levelLinesCleared = 0;
 	static ull levelTime = 1000ull;
+    clear();
 	drawAll(x,y,p,n);
 	resetTime();
 	while(1){
