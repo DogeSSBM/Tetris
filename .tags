@@ -1,0 +1,135 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BLACK	Colors.h	/^const Color BLACK		= {0x00, 0x00, 0x00, 0xFF};$/;"	v
+BLUE	Colors.h	/^const Color BLUE 		= {0x00, 0x00, 0xFF, 0xFF};$/;"	v
+ClockPerMs	Timing.h	/^clock_t ClockPerMs = CLOCKS_PER_SEC \/ 1000;$/;"	v
+Color	Types.h	/^typedef SDL_Color Color;$/;"	t
+GAP	main.c	2;"	d	file:
+GREEN	Colors.h	/^const Color GREEN 	= {0x00, 0xFF, 0x00, 0xFF};$/;"	v
+GREY	Colors.h	/^const Color GREY		= {0x80, 0x80, 0x80, 0xFF};$/;"	v
+MOVE_D	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+MOVE_L	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+MOVE_R	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+MOVE_U	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+NOTHING	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+NUMPIECES	PieceDefs.h	/^const uint NUMPIECES = 7u;$/;"	v
+PIECE0	PieceDefs.h	3;"	d
+PIECE1	PieceDefs.h	8;"	d
+PIECE2	PieceDefs.h	13;"	d
+PIECE3	PieceDefs.h	18;"	d
+PIECE4	PieceDefs.h	23;"	d
+PIECE5	PieceDefs.h	28;"	d
+PIECE6	PieceDefs.h	33;"	d
+PINK	Colors.h	/^const Color PINK		= {0xFF, 0xC0, 0xCB, 0xFF};$/;"	v
+PLACE	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+RED	Colors.h	/^const Color RED 		= {0xFF, 0x00, 0x00, 0xFF};$/;"	v
+ROTATE_L	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+ROTATE_R	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	e	enum:__anon1
+Rect	Types.h	/^typedef SDL_Rect Rect;$/;"	t
+SCALE	main.c	1;"	d	file:
+TB_create	Graphics.h	/^TextBox* TB_create(uint x, uint y, const char* text)$/;"	f
+TB_destroy	Graphics.h	/^void TB_destroy(TextBox *tb)$/;"	f
+TB_draw	Graphics.h	/^void TB_draw(TextBox *tb)$/;"	f
+TB_quit	Graphics.h	/^void TB_quit()$/;"	f
+TB_setText	Graphics.h	/^void TB_setText(TextBox *tb, const char *text)$/;"	f
+TB_setTextSize	Graphics.h	/^void TB_setTextSize(TextBox *tb, int size)$/;"	f
+TextBox	Graphics.h	/^}TextBox;$/;"	t	typeref:struct:__anon3
+WHITE	Colors.h	/^const Color WHITE		= {0xFF, 0xFF, 0xFF, 0xFF};$/;"	v
+YELLOW	Colors.h	/^const Color YELLOW	= {0xFF, 0xFF, 0x00, 0xFF};$/;"	v
+backColor	Graphics.h	/^	Color backColor;$/;"	m	struct:__anon3
+board	Board.h	/^bool board[10][20] = {0};$/;"	v
+charToInt	GetInt.h	/^int charToInt(const char c)$/;"	f
+checkLines	Board.h	/^bool checkLines()$/;"	f
+clear	Graphics.h	/^void clear()$/;"	f
+copyAbove	Board.h	/^void copyAbove(uint y)$/;"	f
+defaultColor	Graphics.h	/^	Color defaultColor;$/;"	m	struct:__anon2
+delay	Graphics.h	/^void delay(uint ms)$/;"	f
+draw	Graphics.h	/^void draw()$/;"	f
+drawAll	Draw.h	/^void drawAll(uint pieceX, uint pieceY, piece p, piece n)$/;"	f
+drawBlock	Draw.h	/^void drawBlock(uint x, uint y)$/;"	f
+drawBoard	Draw.h	/^void drawBoard()$/;"	f
+drawHLine	Graphics.h	/^void drawHLine(uint x, uint y, int len)$/;"	f
+drawLine	Graphics.h	/^void drawLine(uint x1, uint y1, uint x2, uint y2)$/;"	f
+drawNext	Draw.h	/^void drawNext(piece n)$/;"	f
+drawPiece	Draw.h	/^void drawPiece(uint xpos, uint ypos, piece p)$/;"	f
+drawPixel	Graphics.h	/^void drawPixel(uint x, uint y)$/;"	f
+drawRect	Graphics.h	/^void drawRect(uint x, uint y, uint xlen, uint ylen)$/;"	f
+drawScore	Draw.h	/^void drawScore()$/;"	f
+drawText	Graphics.h	/^void drawText(uint x, uint y, const char *text)$/;"	f
+drawVLine	Graphics.h	/^void drawVLine(uint x, uint y, int len)$/;"	f
+drawWalls	Draw.h	/^void drawWalls()$/;"	f
+elapsedTime	Timing.h	/^ull elapsedTime()$/;"	f
+event	Events.h	/^typedef enum{MOVE_U, MOVE_D, MOVE_L, MOVE_R, ROTATE_L, ROTATE_R, PLACE, NOTHING}event;$/;"	t	typeref:enum:__anon1
+events	Events.h	/^event events()$/;"	f
+fillBorder	Graphics.h	/^void fillBorder(uint x, uint y, uint xlen, uint ylen, int b)$/;"	f
+fillRect	Graphics.h	/^void fillRect(uint x, uint y, uint xlen, uint ylen)$/;"	f
+fits	Pieces.h	/^bool fits(uint x, uint y, const piece p)$/;"	f
+font	Graphics.h	/^	TTF_Font* font;$/;"	m	struct:__anon2
+fontColor	Graphics.h	/^	Color fontColor;$/;"	m	struct:__anon2
+fontSize	Graphics.h	/^	int fontSize;$/;"	m	struct:__anon2
+getBlock	Pieces.h	/^bool getBlock(const uint x, const uint y, const piece p)$/;"	f
+getInt	GetInt.h	/^int getInt(void)$/;"	f
+getMaxBounds	Pieces.h	/^void getMaxBounds(uint *const xbound, uint *const ybound, const piece p)$/;"	f
+getMinBounds	Pieces.h	/^void getMinBounds(uint *const xbound, uint *const ybound, const piece p)$/;"	f
+getR	GetInt.h	/^int getR(const int num)$/;"	f
+gfx	Graphics.h	/^}gfx = {};$/;"	v	typeref:struct:__anon2
+gfx_init	Graphics.h	/^void gfx_init(uint winXlen, uint winYlen)$/;"	f
+gfx_quit	Graphics.h	/^void gfx_quit()$/;"	f
+i16	Types.h	/^typedef int16_t i16;$/;"	t
+i32	Types.h	/^typedef int32_t i32;$/;"	t
+i64	Types.h	/^typedef int64_t i64;$/;"	t
+i8	Types.h	/^typedef int8_t i8;$/;"	t
+initScore	Score.h	/^void initScore()$/;"	f
+intToChar	GetInt.h	/^char intToChar(const int num)$/;"	f
+intToStr	GetInt.h	/^void intToStr(int num, char* str)$/;"	f
+lineFull	Board.h	/^bool lineFull(uint y)$/;"	f
+loose	main.c	/^void loose()$/;"	f
+main	TextDebugStuff.c	/^int main(int argc, char const *argv[])$/;"	f
+main	main.c	/^int main(int argc, char const *argv[])$/;"	f
+maxAdjust	Pieces.h	/^piece maxAdjust(const piece p)$/;"	f
+minAdjust	Pieces.h	/^piece minAdjust(const piece p)$/;"	f
+piece	Types.h	/^typedef u16 piece;$/;"	t
+pieces	PieceDefs.h	/^const piece pieces[] = {PIECE0, PIECE1, PIECE2, PIECE3, PIECE4, PIECE5, PIECE6};$/;"	v
+placePiece	Pieces.h	/^void placePiece(uint xpos, uint ypos, piece p)$/;"	f
+printBoard	TextDebugStuff.c	/^void printBoard()$/;"	f
+printOptions	TextDebugStuff.c	/^void printOptions()$/;"	f
+printPiece	Pieces.h	/^void printPiece(const piece p)$/;"	f
+printPiece2	Pieces.h	/^void printPiece2(const piece p)$/;"	f
+r	Graphics.h	/^	Rect r;$/;"	m	struct:__anon3
+rawScore	Score.h	/^uint rawScore = 0;$/;"	v
+refTime	Timing.h	/^clock_t refTime;$/;"	v
+removeLine	Board.h	/^void removeLine(uint starty)$/;"	f
+removePiece	Pieces.h	/^void removePiece(uint xpos, uint ypos, piece p)$/;"	f
+renderer	Graphics.h	/^	SDL_Renderer* renderer;$/;"	m	struct:__anon2
+resetTime	Timing.h	/^void resetTime()$/;"	f
+rotateL	Pieces.h	/^piece rotateL(const piece p)$/;"	f
+rotateR	Pieces.h	/^piece rotateR(const piece p)$/;"	f
+scoreLabel	Score.h	/^TextBox *scoreLabel;$/;"	v
+scoreNum	Score.h	/^TextBox *scoreNum;$/;"	v
+scoreText	Score.h	/^char scoreText[] = "00000";$/;"	v
+setBlock	Pieces.h	/^void setBlock(const uint x, const uint y, piece *const p, const bool isFilled)$/;"	f
+setColor	Graphics.h	/^void setColor(Color c)$/;"	f
+setFontSize	Graphics.h	/^void setFontSize(int size)$/;"	f
+setRGB	Graphics.h	/^void setRGB(u8 r, u8 g, u8 b)$/;"	f
+setRGBA	Graphics.h	/^void setRGBA(u8 r, u8 g, u8 b, u8 a)$/;"	f
+setScore	Score.h	/^void setScore(uint s)$/;"	f
+shiftL	GetInt.h	/^int shiftL(int num, int digits)$/;"	f
+shiftR	GetInt.h	/^int shiftR(const int num)$/;"	f
+size	Graphics.h	/^	int size;$/;"	m	struct:__anon3
+strToInt	GetInt.h	/^int strToInt(const char *str)$/;"	f
+text	Graphics.h	/^	char* text;$/;"	m	struct:__anon3
+textColor	Graphics.h	/^	Color textColor;$/;"	m	struct:__anon3
+u16	Types.h	/^typedef uint16_t u16;$/;"	t
+u32	Types.h	/^typedef uint32_t u32;$/;"	t
+u64	Types.h	/^typedef uint64_t u64;$/;"	t
+u8	Types.h	/^typedef uint8_t u8;$/;"	t
+uint	Types.h	/^typedef unsigned int uint;$/;"	t
+ul	Types.h	/^typedef unsigned long ul;$/;"	t
+ull	Types.h	/^typedef unsigned long long ull;$/;"	t
+window	Graphics.h	/^	SDL_Window* window;$/;"	m	struct:__anon2
+xlen	Graphics.h	/^	uint xlen, ylen;$/;"	m	struct:__anon2
+ylen	Graphics.h	/^	uint xlen, ylen;$/;"	m	struct:__anon2
